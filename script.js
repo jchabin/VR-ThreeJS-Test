@@ -31,7 +31,7 @@ window.onload = function(){
 		if (!e.alpha) {
 			return;
 		}
-		controls = new THREE.DeviceOrientationControls(camera, true);
+		controls = new THREE.DeviceOrientationControls(camera, false);
 		controls.connect();
 		controls.update();
 		element.addEventListener("click", fullscreen, false);
