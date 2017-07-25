@@ -59,6 +59,10 @@ window.onload = function(){
 	// scene.add(box);
 	controls = new THREE.DeviceOrientationControls(camera);
 	
+	var effect = new THREE.StereoEffect(renderer);
+	effect.eyeSeparation = 10;
+	effect.setSize( window.innerWidth, window.innerHeight );
+	
 	var x = 0;
 	function render() {
 		requestAnimationFrame(render);
@@ -77,7 +81,7 @@ window.onload = function(){
 		updateReflection(); */
 		x += 0.01;
 		controls.update();
-		renderer.render(scene, camera);
+		effect.render(scene, camera);
 	}
 	render();
 }
