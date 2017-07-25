@@ -49,6 +49,7 @@ window.onload = function(){
 	var x = 0;
 	function render() {
 		requestAnimationFrame(render);
+		controls.update();
 		cube.rotation.y = x;
 		x += 0.01;
 		effect.render(scene, camera);
