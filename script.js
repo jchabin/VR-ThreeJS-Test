@@ -26,17 +26,7 @@ window.onload = function(){
 	);
 	scene.add(cube);
 	
-	controls = new THREE.OrbitControls(camera, element);
-	function setOrientationControls(e) {
-		if (!e.alpha) {
-			return;
-		}
-		controls = new THREE.DeviceOrientationControls(camera, false);
-		controls.connect();
-		controls.update();
-		element.addEventListener("click", fullscreen, false);
-		window.removeEventListener("deviceorientation", setOrientationControls, true);
-	}
+	controls = new THREE.DeviceOrientationControls(camera);
 	window.addEventListener("deviceorientation", setOrientationControls, true);
 	
 	var effect = new THREE.StereoEffect(renderer);
