@@ -7,6 +7,20 @@ window.onload = function(){
 	
 	var element = renderer.domElement;
 	document.body.appendChild(element);
+	
+	var cubemap = new THREE.CubeTextureLoader()
+	.setCrossOrigin("")
+	.load([
+		"https://raw.githubusercontent.com/jchabin/MyImageHostingMagic/master/orange/right.png",
+		"https://raw.githubusercontent.com/jchabin/MyImageHostingMagic/master/orange/left.png",
+		"https://raw.githubusercontent.com/jchabin/MyImageHostingMagic/master/orange/top.png",
+		"https://raw.githubusercontent.com/jchabin/MyImageHostingMagic/master/orange/bottom.png",
+		"https://raw.githubusercontent.com/jchabin/MyImageHostingMagic/master/orange/front.png",
+		"https://raw.githubusercontent.com/jchabin/MyImageHostingMagic/master/orange/back.png"
+	]);
+	cubemap.format = THREE.RGBFormat;
+	scene.background = cubemap;
+	
 	camera = new THREE.PerspectiveCamera(
 		90,
 		window.innerWidth / window.innerHeight,
@@ -27,7 +41,6 @@ window.onload = function(){
 	scene.add(cube);
 	
 	controls = new THREE.DeviceOrientationControls(camera);
-	window.addEventListener("deviceorientation", setOrientationControls, true);
 	
 	var effect = new THREE.StereoEffect(renderer);
 	effect.eyeSeparation = 10;
