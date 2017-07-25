@@ -47,7 +47,7 @@ camera.rotation.set(0, 0, 0);
 var x = 0;
 function render() {
 	requestAnimationFrame(render);
-	//controls.update();
+	controls.update();
 	cube.rotation.y = x;
 	x += 0.01;
 	effect.render(scene, camera);
