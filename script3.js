@@ -29,7 +29,7 @@ else{
 }
 
 var effect = new THREE.StereoEffect(renderer);
-effect.eyeSeparation = 50;
+effect.eyeSeparation = 10;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 for(var r = -0.5 * BOXES; r < BOXES / 2; r++)
