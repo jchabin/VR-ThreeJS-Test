@@ -35,7 +35,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 for(var r = -0.5 * BOXES; r < BOXES / 2; r++)
 for(var c = -0.5 * BOXES; c < BOXES / 2; c++){
 var height = Math.random() * 10 + 3 * (r * r + c * c);
-var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, height, 10), new THREE.MeshStandardMaterial());
+var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, height, 10), new THREE.MeshStandardMaterial({metalness: Math.random(), roughness: Math.random()}));
 a.position.set(r * 10, height / 2, c * 10);
 scene.add(a);
 
