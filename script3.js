@@ -18,7 +18,7 @@ camera = new THREE.PerspectiveCamera(
 camera.position.set(0, 20, 0)
 scene.add(camera);
 	
-const BOXES = 10;
+const BOXES = 20;
 	
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
 if(mobile)
@@ -34,7 +34,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 
 for(var r = -0.5 * BOXES; r < BOXES / 2; r++)
 for(var c = -0.5 * BOXES; c < BOXES / 2; c++){
-var height = Math.random() * 10 + Math.sqrt(r * r + c * c);
+var height = Math.random() * 10 + 3 * (r * r + c * c);
 var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, height, 10), new THREE.MeshStandardMaterial());
 a.position.set(r * 10, height / 2, c * 10);
 scene.add(a);
