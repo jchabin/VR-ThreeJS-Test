@@ -19,39 +19,28 @@ camera = new THREE.PerspectiveCamera(
 camera.position.set(0, 20, 0)
 scene.add(camera);
 	
-const BOXES = 20;
-	
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
 if(mobile)
 	controls = new THREE.DeviceOrientationControls(camera);
 else{
 	controls = new THREE.OrbitControls(camera, element);
-	camera.position.set(0, BOXES * 2.5, 0);
 }
 
 var effect = new THREE.StereoEffect(renderer);
 effect.eyeSeparation = 10;
 effect.setSize(window.innerWidth, window.innerHeight);
 
-for(var r = -0.5 * BOXES; r < BOXES / 2; r++)
-for(var c = -0.5 * BOXES; c < BOXES / 2; c++){
-var height = Math.random() * 10 + 3 * (r * r + c * c);
-var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, height, 10), new THREE.MeshStandardMaterial({metalness: Math.random(), roughness: Math.random()}));
-a.position.set(r * 10, height / 2, c * 10);
-scene.add(a);
-
-
-}
-
 var light = new THREE.PointLight();
 scene.add(light);
+light.position.set(0, 20, -20);
+var c = new THREE.Mesh(new THREE.CylnderBufferGeometry(15, 15, 40, 6);
+c.rotation.set(0, 0, -Math.PI);
 
 var x = 0;
 
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-	light.position.set(100 * Math.sin(x), 100, 100 * Math.cos(x));
 	x += 0.01;
 	effect.render(scene, camera);
 }
