@@ -8,6 +8,7 @@ var element = renderer.domElement;
 document.body.appendChild(element);
 
 scene.background = new THREE.Color(0x2d2c42);
+scene.fog = new THREE.Fog(0x2d2c42, 100, 300);
 
 camera = new THREE.PerspectiveCamera(
 	90,
