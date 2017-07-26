@@ -15,6 +15,7 @@ camera = new THREE.PerspectiveCamera(
 	0.01,
 	3000
 );
+camera.position.set(0, 20, 0)
 scene.add(camera);
 	
 const BOXES = 10;
