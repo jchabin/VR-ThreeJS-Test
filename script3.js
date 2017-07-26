@@ -50,7 +50,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-	light.position.set(20 * Math.sin(x), 20, 20 * Math.cos(x));
+	light.position.set(100 * Math.sin(x), 100, 100 * Math.cos(x));
 	x += 0.01;
 	effect.render(scene, camera);
 }
