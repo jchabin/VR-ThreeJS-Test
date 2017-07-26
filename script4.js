@@ -41,7 +41,7 @@ const CUBES = 5;
 for(var r = 0; r < CUBES; r++) for(var c = 0; c < CUBES; c++){
 var a = new THREE.Mesh(new THREE.BoxBufferGeometry(5, 5, 5), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5}));
 var b = Math.random() * Math.PI * 2;
-a.position.set((r - BOXES / 2) * 5, Math.sin(b), (c - BOXES / 2) * 5);
+a.position.set((r - CUBES / 2) * 5, Math.sin(b), (c - CUBES / 2) * 5);
 cubes.push({a: a, b: b});
 scene.add(a);
 }
