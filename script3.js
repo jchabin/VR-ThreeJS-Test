@@ -43,7 +43,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-c.rotation.set(0, x, -Math.PI / 2);
+c.rotation.set(x, 0, -Math.PI / 2);
 	x += 0.01;
 	effect.render(scene, camera);
 }
