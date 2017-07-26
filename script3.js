@@ -45,8 +45,7 @@ function render() {
 	requestAnimationFrame(render);
 	controls.update();
 c.rotation.set(x * Math.PI, 0, -Math.PI / 2);
-	x += 0.005;
-if(x % (2 / 6) == 0){
+if((x * 6) % 2 == 0){
 var a = new THREE.Mesh(new THREE.BoxBufferGeometry(2, 2, 2), new THREE.MeshToonMaterial({color: 0xff0000}));
 scene.add(a);
 spikes.push({s: x, o: a});
@@ -55,6 +54,7 @@ for(var i = 0; i < spikes.length; i++){
 var a = spikes[i];
 a.o.position.set(0, Math.sin((x - a.s) * Math.PI), Math.cos((x - a.s) * Math.PI));
 }
-	effect.render(scene, camera);
+	x += 0.005;
+effect.render(scene, camera);
 }
 render();
