@@ -39,12 +39,22 @@ c.rotation.set(0, 0, -Math.PI / 2);
 scene.add(c);
 
 var x = 0;
+var spikes = [];
 
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-c.rotation.set(x, 0, -Math.PI / 2);
-	x += 0.01;
+c.rotation.set(x * Math.PI, Math.PI / 2, -Math.PI / 2);
+	x += 0.005;
+if(x % (2 / 6) == 0){
+var a = new THREE.Mesh(new THREE.BoxBufferGeometry(2, 2, 2), new THREE.MeshToonMaterial({color: 0xff0000}));
+scene.add(a);
+spikes.push({s: x, o: a});
+}
+for(var i = 0; i < spikes.length; i++){
+var a = spikes[i];
+a.o.position.set(0, Math.sin((x - a.s) * Math.PI), Math.cos((x - a.s) * Math.PI));
+}
 	effect.render(scene, camera);
 }
 render();
