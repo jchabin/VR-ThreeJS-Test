@@ -7,8 +7,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 var element = renderer.domElement;
 document.body.appendChild(element);
 
-scene.background = new THREE.Color(0x2d2c42);
-scene.fog = new THREE.Fog(0x2d2c42, 100, 200);
+scene.background = new THREE.Color(0x000000);
+scene.fog = new THREE.Fog(0x000000, 100, 200);
 
 camera = new THREE.PerspectiveCamera(
 	90,
@@ -16,7 +16,7 @@ camera = new THREE.PerspectiveCamera(
 	0.01,
 	3000
 );
-camera.position.set(0, 20, 0)
+camera.position.set(0, 0, 0);
 scene.add(camera);
 	
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
@@ -24,6 +24,8 @@ if(mobile)
 	controls = new THREE.DeviceOrientationControls(camera);
 else{
 	controls = new THREE.OrbitControls(camera, element);
+camera.position.set(0, 20, 0);
+
 }
 
 var effect = new THREE.StereoEffect(renderer);
@@ -34,26 +36,22 @@ var light = new THREE.PointLight();
 scene.add(light);
 light.position.set(0, 20, -20);
 
-var c = new THREE.Mesh(new THREE.CylinderBufferGeometry(15, 15, 40, 6), new THREE.MeshToonMaterial({color: 0x888888}));
-c.rotation.set(0, 0, -Math.PI / 2);
-scene.add(c);
+const CUBES = 30;
+for(var i = 0; i < CUBES; i++){
+var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5});
+var b = Math.random() * Math.PI * 2;
+var c = Math.random() * Math.PI * 2;
+var d = Math.random() * 10 + 10;
+a.position.set(Math.sin(b) * Math.cos(c) * d, Math.sin(c) * d, Math.cos(b) * Math.cos(c) * d);
+a.rotation.set(Math.random() * Math.PI * 2, Math.random() * Math.PI * 2, Math.random() * Math.PI * 2);
+scene.add(a);
+}
 
 var x = 0;
-var spikes = [];
 
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-c.rotation.set(x * Math.PI, 0, -Math.PI / 2);
-if((x * 6) % 2 == 0){
-var a = new THREE.Mesh(new THREE.BoxBufferGeometry(2, 2, 2), new THREE.MeshToonMaterial({color: 0xff0000}));
-scene.add(a);
-spikes.push({s: x, o: a});
-}
-for(var i = 0; i < spikes.length; i++){
-var a = spikes[i];
-a.o.position.set(0, Math.sin((x - a.s) * Math.PI), Math.cos((x - a.s) * Math.PI));
-}
 	x += 0.005;
 effect.render(scene, camera);
 }
