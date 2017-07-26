@@ -34,11 +34,11 @@ effect.setSize(window.innerWidth, window.innerHeight);
 
 var light = new THREE.PointLight();
 scene.add(light);
-light.position.set(0, 20, -20);
+light.position.set(0, 0, 10);
 
 const CUBES = 30;
 for(var i = 0; i < CUBES; i++){
-var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5}));
+var a = new THREE.Mesh(new THREE.BoxBufferGeometry(5, 5, 5), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5}));
 var b = Math.random() * Math.PI * 2;
 var c = Math.random() * Math.PI * 2;
 var d = Math.random() * 10 + 10;
@@ -52,6 +52,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
+light.position.set(Math.sin(x) * 10, 0, Math.cos(x) * 10);
 	x += 0.005;
 effect.render(scene, camera);
 }
