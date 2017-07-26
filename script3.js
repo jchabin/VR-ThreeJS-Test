@@ -35,7 +35,7 @@ scene.add(light);
 light.position.set(0, 20, -20);
 
 var c = new THREE.Mesh(new THREE.CylnderBufferGeometry(15, 15, 15, 6), new THREE.MeshStandardMaterial());
-c.rotation.set(0, 0, -Math.PI);
+//c.rotation.set(0, 0, -Math.PI);
 scene.add(c);
 
 var x = 0;
