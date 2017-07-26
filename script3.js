@@ -44,7 +44,7 @@ var spikes = [];
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-c.rotation.set(x * Math.PI, Math.PI / 2, -Math.PI / 2);
+c.rotation.set(x * Math.PI, 0, -Math.PI / 2);
 	x += 0.005;
 if(x % (2 / 6) == 0){
 var a = new THREE.Mesh(new THREE.BoxBufferGeometry(2, 2, 2), new THREE.MeshToonMaterial({color: 0xff0000}));
