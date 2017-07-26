@@ -17,7 +17,7 @@ camera = new THREE.PerspectiveCamera(
 );
 scene.add(camera);
 	
-const BOXES = 7;
+const BOXES = 10;
 	
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
 if(mobile)
@@ -31,18 +31,16 @@ var effect = new THREE.StereoEffect(renderer);
 effect.eyeSeparation = 50;
 effect.setSize(window.innerWidth, window.innerHeight);
 
-for(var x = 0; x < BOXES; x++)
-	for(var y = 0; y < BOXES; y++)
-		for(var z = 0; z < BOXES; z++){
-			var a = new THREE.Mesh(
-				new THREE.BoxBufferGeometry(5, 5, 5),
-				new THREE.MeshStandardMaterial()
-			);
-			a.position.set((x - BOXES / 2) * 10 + 5, (y - BOXES / 2) * 10 + 5, (z - BOXES / 2) * 10 + 5);
-			if(!(a.position.x == 0 && a.position.y == 0 && a.position.z == 0))
-				scene.add(a);
-		}
-		
+for(var r = -0.5 * BOXES; r < BOXES / 2; r++)
+for(var c = -0.5 * BOXES; c < BOXES / 2; c++){
+var height = Math.random() * 10 + Math.sqrt(r * r + c * c);
+var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, height, 10), new THREE.MeshStandardMaterial());
+a.position.set(r * 10, height / 2, c * 10);
+scene.add(a);
+
+
+}
+
 var light = new THREE.PointLight();
 scene.add(light);
 
@@ -51,7 +49,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-	light.position.set(20 * Math.sin(x), 20 * Math.cos(x), 20 * Math.tan(x));
+	light.position.set(20 * Math.sin(x), 20, 20 * Math.cos(x));
 	x += 0.01;
 	effect.render(scene, camera);
 }
