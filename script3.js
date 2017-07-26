@@ -38,7 +38,7 @@ light.position.set(0, 20, -20);
 
 const CUBES = 30;
 for(var i = 0; i < CUBES; i++){
-var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5});
+var a = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5}));
 var b = Math.random() * Math.PI * 2;
 var c = Math.random() * Math.PI * 2;
 var d = Math.random() * 10 + 10;
