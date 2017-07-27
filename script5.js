@@ -63,5 +63,14 @@ function render() {
 	ball.position.x += ball.xv;
 	ball.position.y += ball.yv;
 	ball.position.z += ball.zv;
+ball.yv -= 0.01;
+if(ball.position.y < -4){
+ball.position.y = -4;
+ball.yv *= -0.3;
+}
+if(ball.position.y > 4){
+ball.position.y = 4;
+ball.yv *= -0.3;
+}
 effect.render(scene, camera);
 }render();
