@@ -51,7 +51,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-light.position.set(Math.sin(x) * 10, 0, Math.cos(x) * 10);
+light.position.set(Math.sin(x) * 10, 1, Math.cos(x) * 10);
 	x += 0.01;
 for(var i = 0; i < CUBES; i++){
 cubes[i].a.position.y = Math.sin(x + cubes[i].b);
