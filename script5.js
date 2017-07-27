@@ -98,9 +98,9 @@ balls[i].zv *= -0.3;
 
 for(var n = 0; n < balls.length; n++)
 if(n != i && balls[n].position.distanceTo(balls[i].position) < 2){
-balls[i].xv += (2 + balls[n].position.x - balls[i].position.x) * BOUNCE;
-balls[i].yv += (2 + balls[n].position.y - balls[i].position.y) * BOUNCE;
-balls[i].zv += (2 + balls[n].position.z - balls[i].position.z) * BOUNCE;
+balls[i].xv += 1 / (balls[i].position.x - balls[n].position.x) * BOUNCE;
+balls[i].yv += 1 / (balls[i].position.y - balls[n].position.y) * BOUNCE;
+balls[i].zv += 1 / (balls[i].position.z - balls[n].position.z) * BOUNCE;
 }
 
 balls[i].xv *= 0.98;
