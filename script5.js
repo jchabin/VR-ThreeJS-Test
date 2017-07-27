@@ -52,14 +52,16 @@ scene.add(b);
 
 var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshBasicMaterial({envMap: cubemap}));
 ball.position.set(0, 0, 0);
-alert(ball.xv);
+ball.xv = Math.random() * 0.02 - 0.01;
+ball.yv = Math.random() * 0.02 - 0.01;
+ball.zv = Math.random() * 0.02 - 0.01;
 scene.add(ball);
-
-var x = 0;
 
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-	x += 0.01;
+	ball.position.x += ball.xv;
+	ball.position.y += ball.yv;
+	ball.position.z += ball.zv;
 effect.render(scene, camera);
 }render();
