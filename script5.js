@@ -52,7 +52,7 @@ scene.add(b);
 
 var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshBasicMaterial({envMap: cubemap}));
 ball.position.set(4.5, -4.5, 4.5);
-scene.add(ball)(
+scene.add(ball);
 
 var x = 0;
 
