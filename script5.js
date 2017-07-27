@@ -60,6 +60,7 @@ ball.yv = Math.random() - 0.5;
 ball.zv = Math.random() - 0.5;
 //scene.add(ball);
 
+const BOUNCE = 1;
 var balls = [];
 
 function render() {
@@ -94,6 +95,14 @@ if(balls[i].position.z > 4){
 balls[i].position.z = 4;
 balls[i].zv *= -0.3;
 }
+
+for(var n = 0; n < balls.length; n++)
+if(n != i && balls[n].position.distanceTo(balls[i].position) < 2){
+balls[i].xv += balls[i].position.x - balls[n].position.x;
+balls[i].yv += balls[i].position.y - balls[n].position.y;
+balls[i].zv += balls[i].position.z - balls[n].position.z;
+}
+
 balls[i].xv *= 0.98;
 balls[i].yv *= 0.98;
 balls[i].zv *= 0.98;
