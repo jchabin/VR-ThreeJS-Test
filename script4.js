@@ -53,7 +53,7 @@ function render() {
 	controls.update();
 light.position.set(Math.sin(x) * 10, 10, Math.cos(x) * 10);
 	x += 0.01;
-for(var i = 0; i < CUBES ^ 2; i++){
+for(var i = 0; i < CUBES * CUBES; i++){
 cubes[i].a.position.y = Math.sin(x + cubes[i].b);
 }
 effect.render(scene, camera);
