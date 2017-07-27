@@ -37,7 +37,7 @@ scene.add(light);
 light.position.set(0, 0, 10);
 
 var cubes = [];
-const CUBES = 5;
+const CUBES = 10;
 for(var r = 0; r < CUBES; r++) for(var c = 0; c < CUBES; c++){
 var a = new THREE.Mesh(new THREE.BoxBufferGeometry(5, 5, 5), new THREE.MeshStandardMaterial({metalness: 1.0, roughness: 0.5}));
 var b = Math.random() * Math.PI * 2;
@@ -51,7 +51,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-light.position.set(Math.sin(x) * 10, 4, Math.cos(x) * 10);
+light.position.set(Math.sin(x) * 10, 10, Math.cos(x) * 10);
 	x += 0.01;
 for(var i = 0; i < CUBES; i++){
 cubes[i].a.position.y = Math.sin(x + cubes[i].b);
