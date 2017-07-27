@@ -52,9 +52,9 @@ scene.add(b);
 
 var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshBasicMaterial({envMap: cubemap}));
 ball.position.set(0, 0, 0);
-ball.xv = Math.random() * 0.1 - 0.05;
-ball.yv = Math.random() * 0.1 - 0.05;
-ball.zv = Math.random() * 0.1 - 0.05;
+ball.xv = Math.random() - 0.5;
+ball.yv = Math.random() - 0.5;
+ball.zv = Math.random() - 0.5;
 scene.add(ball);
 
 function render() {
