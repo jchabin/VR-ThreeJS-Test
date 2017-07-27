@@ -106,7 +106,7 @@ var b;
 if(balls.length < BALLS)
 b = ball.clone();
 else
-b = balls[i % BALLS];
+b = balls[index % BALLS];
 b.position.set(0, 0, 0);
 b.xv = Math.sin(camera.rotation.y) * Math.cos(camera.rotation.x);
 b.yv = Math.sin(camera.rotation.x);
