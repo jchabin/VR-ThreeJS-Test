@@ -60,7 +60,7 @@ ball.yv = Math.random() - 0.5;
 ball.zv = Math.random() - 0.5;
 //scene.add(ball);
 
-const BOUNCE = 1;
+const BOUNCE = 0.1;
 var balls = [];
 
 function render() {
