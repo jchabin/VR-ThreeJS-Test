@@ -20,7 +20,6 @@ var cubemap = new THREE.CubeTextureLoader()
 		"cubemap/IMG_5199.PNG"
 	]);
 cubemap.format = THREE.RGBFormat;
-scene.background = cubemap;
 
 camera = new THREE.PerspectiveCamera(
 	90,
@@ -50,6 +49,10 @@ scene.add(plane);
 
 var b = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10, 5, 5, 5), new THREE.MeshBasicMaterial({color: 0xeeeeee, wireframe: true}));
 scene.add(b);
+
+var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshBasicMaterial({envMap: cubemap}));
+ball.position.set(4.5, -4.5, 4.5);
+scene.add(ball)(
 
 var x = 0;
 
