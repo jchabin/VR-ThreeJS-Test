@@ -35,7 +35,7 @@ if(mobile)
 	controls = new THREE.DeviceOrientationControls(camera);
 else{
 	controls = new THREE.OrbitControls(camera, element);
-camera.position.set(0, 10, 0);
+camera.position.set(0, 0, 10);
 }
 
 var effect = new THREE.StereoEffect(renderer);
