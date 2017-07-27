@@ -10,6 +10,18 @@ document.body.appendChild(element);
 scene.background = new THREE.Color(0xffffff);
 scene.fog = new THREE.Fog(0xffffff, 100, 200);
 
+var cubemap = new THREE.CubeTextureLoader()
+	.load([
+		"cubemap/IMG_5203.png",
+		"cubemap/IMG_5202.png",
+		"cubemap/IMG_5204.png",
+		"cubemap/IMG_5200.png",
+		"cubemap/IMG_5199.png",
+		"cubemap/IMG_5201.png"
+	]);
+cubemap.format = THREE.RGBFormat;
+scene.background = cubemap;
+
 camera = new THREE.PerspectiveCamera(
 	90,
 	window.innerWidth / window.innerHeight,
