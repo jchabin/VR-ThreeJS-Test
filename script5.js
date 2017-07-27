@@ -16,8 +16,8 @@ var cubemap = new THREE.CubeTextureLoader()
 		"cubemap/IMG_5202.PNG",
 		"cubemap/IMG_5204.PNG",
 		"cubemap/IMG_5200.PNG",
-		"cubemap/IMG_5199.PNG",
-		"cubemap/IMG_5201.PNG"
+		"cubemap/IMG_5201.PNG",
+		"cubemap/IMG_5199.PNG"
 	]);
 cubemap.format = THREE.RGBFormat;
 scene.background = cubemap;
