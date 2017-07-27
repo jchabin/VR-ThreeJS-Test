@@ -72,5 +72,24 @@ if(ball.position.y > 4){
 ball.position.y = 4;
 ball.yv *= -0.3;
 }
+if(ball.position.x < -4){
+ball.position.x = -4;
+ball.xv *= -0.3;
+}
+if(ball.position.x > 4){
+ball.position.x = 4;
+ball.xv *= -0.3;
+}
+if(ball.position.z < -4){
+ball.position.z = -4;
+ball.zv *= -0.3;
+}
+if(ball.position.z > 4){
+ball.position.z = 4;
+ball.zv *= -0.3;
+}
+ball.xv *= 0.98;
+ball.yv *= 0.98;
+ball.zv *= 0.98;
 effect.render(scene, camera);
 }render();
