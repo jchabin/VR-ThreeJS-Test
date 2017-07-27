@@ -16,7 +16,7 @@ camera = new THREE.PerspectiveCamera(
 	0.01,
 	3000
 );
-camera.position.set(0, 0, 0);
+camera.position.set(0, 5, 0);
 scene.add(camera);
 	
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
@@ -51,7 +51,7 @@ var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
-light.position.set(Math.sin(x) * 10, 1, Math.cos(x) * 10);
+light.position.set(Math.sin(x) * 10, 4, Math.cos(x) * 10);
 	x += 0.01;
 for(var i = 0; i < CUBES; i++){
 cubes[i].a.position.y = Math.sin(x + cubes[i].b);
