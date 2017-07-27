@@ -45,7 +45,6 @@ a.position.set((r - CUBES / 2) * 5, Math.sin(b), (c - CUBES / 2) * 5);
 cubes.push({a: a, b: b});
 scene.add(a);
 }
-}
 
 var x = 0;
 
