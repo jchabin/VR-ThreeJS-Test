@@ -108,9 +108,9 @@ b = ball.clone();
 else
 b = balls[index % BALLS];
 b.position.set(0, 0, 0);
-b.xv = Math.sin(camera.rotation.y) * Math.cos(camera.rotation.x);
+b.xv = Math.sin(camera.rotation.y) * -Math.cos(camera.rotation.x);
 b.yv = Math.sin(camera.rotation.x);
-b.zv = Math.cos(camera.rotation.y) * Math.cos(camera.rotation.x);
+b.zv = Math.cos(camera.rotation.y) * -Math.cos(camera.rotation.x);
 if(balls.length < BALLS){
 balls.push(b);
 scene.add(b);
