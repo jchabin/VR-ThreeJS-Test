@@ -101,7 +101,7 @@ balls[i].zv *= 0.98;
 effect.render(scene, camera);
 }render();
 
-window.onclick = function(e){
+window.onmousedown = function(e){
 var b;
 if(balls.length < BALLS)
 b = ball.clone();
