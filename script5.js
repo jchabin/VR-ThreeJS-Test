@@ -1,4 +1,4 @@
-const BALLS = 10;
+const BALLS = 20;
 var index = 0;
 
 var camera, renderer, scene;
