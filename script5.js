@@ -45,12 +45,12 @@ var effect = new THREE.StereoEffect(renderer);
 effect.eyeSeparation = 10;
 effect.setSize(window.innerWidth, window.innerHeight);
 
-var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(10, 10), new THREE.MeshBasicMaterial({color: 0xeeeeee}));
+var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(10, 10), new THREE.MeshBasicMaterial({color: 0xdddddd}));
 plane.rotation.set(-Math.PI / 2, 0, 0);
 plane.position.set(0, -5, 0);
 scene.add(plane);
 
-var b = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10, 5, 5, 5), new THREE.MeshBasicMaterial({color: 0xeeeeee, wireframe: true}));
+var b = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10, 5, 5, 5), new THREE.MeshBasicMaterial({color: 0xdddddd, wireframe: true}));
 scene.add(b);
 
 var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshStandardMaterial({envMap: cubemap, roughness: 0.9, metalness: 1.0, envMapIntensity: 3}));
