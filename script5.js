@@ -53,7 +53,7 @@ scene.add(plane);
 var b = new THREE.Mesh(new THREE.BoxBufferGeometry(10, 10, 10, 5, 5, 5), new THREE.MeshBasicMaterial({color: 0xeeeeee, wireframe: true}));
 scene.add(b);
 
-var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshStandardMaterial({envMap: cubemap, roughness: 0.9, metalness: 1.0, envMapIntensity: 2}));
+var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(1, 32, 32), new THREE.MeshStandardMaterial({envMap: cubemap, roughness: 0.9, metalness: 1.0, envMapIntensity: 3}));
 ball.position.set(0, 0, 0);
 ball.xv = Math.random() - 0.5;
 ball.yv = Math.random() - 0.5;
