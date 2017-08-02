@@ -109,7 +109,8 @@ balls[i].yv *= 0.98;
 balls[i].zv *= 0.98;
 }
 effect.render(scene, camera);
-}render();
+}
+render();
 
 element.onclick = function(e){
 var b;
