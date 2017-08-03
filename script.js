@@ -43,7 +43,7 @@ var shards = [];
 for(var i = 0; i < SHAPES; i++){
 	var g = new THREE.Geometry();
 	for(var c = 0; c < SIDES; c++)
-		g.vertices.push(new THREE.Vector3(Math.random() * 100 - 50, Math.random() * 100 - 50, Math.random() * 100 - 50));
+		g.vertices.push(new THREE.Vector3(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100));
 	for(var c = 0; c < SIDES; c++)
 		for(var f = c + 1; f < SIDES; f++)
 			for(var z = f + 1; z < SIDES; z++)
@@ -59,7 +59,7 @@ for(var i = 0; i < SHAPES; i++){
 	var a = new THREE.Mesh(g, new THREE.MeshStandardMaterial({side: THREE.DoubleSide, roughness: 0.5, metalness: 1, shading: THREE.FlatShading}));
 	var xr = Math.random() * 2 * Math.PI;
 	var yr = Math.random() * 2 * Math.PI;
-	var d = Math.random() * 500 + 100;
+	var d = Math.random() * 500 + 200;
 	a.x = Math.cos(xr) * Math.cos(yr) * d;
 	a.y = Math.sin(xr) * d;
 	a.z = Math.cos(xr) * Math.sin(yr) * d;
