@@ -31,7 +31,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 var ground = new THREE.Mesh(
 	new THREE.IcosahedronBufferGeometry(10, 0),
 	new THREE.MeshStandardMaterial());
-ground.position.set(0, -21, 0);
+ground.position.set(0, -11, 0);
 ground.rotation.x = 0.3735005;
 scene.add(ground);
 
