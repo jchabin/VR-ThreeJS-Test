@@ -33,12 +33,12 @@ effect.setSize(window.innerWidth, window.innerHeight);
 THREE.ImageUtils.crossOrigin = "";
 var cubemap = new THREE.CubeTextureLoader()
 	.load([
-		"cubemap/IMG_5203.PNG",
-		"cubemap/IMG_5202.PNG",
-		"cubemap/IMG_5204.PNG",
-		"cubemap/IMG_5200.PNG",
-		"cubemap/IMG_5201.PNG",
-		"cubemap/IMG_5199.PNG"
+		"../cubemap/IMG_5203.PNG",
+		"../cubemap/IMG_5202.PNG",
+		"../cubemap/IMG_5204.PNG",
+		"../cubemap/IMG_5200.PNG",
+		"../cubemap/IMG_5201.PNG",
+		"../cubemap/IMG_5199.PNG"
 	]);
 cubemap.format = THREE.RGBFormat;
 
@@ -107,6 +107,7 @@ function render() {
 		shards[i].position.set(Math.sin(x + shards[i].x) * 50 + shards[i].x, Math.cos(x + shards[i].y)* 50 + shards[i].y, Math.sin(x / 2 + shards[i].z) * 50 + shards[i].z);
 		shards[i].rotation.set(x * Math.sin(shards[i].y), x * Math.cos(shards[i].z), x * Math.sin(shards[i].x));
 	}
+	balls.rotation.y = x * 10;
 	effect.render(scene, camera);
 }
 render();
