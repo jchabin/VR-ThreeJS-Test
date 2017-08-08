@@ -95,8 +95,14 @@ plane.rotation.set(-Math.PI / 2, 0, 0);
 balls.add(plane);
 balls.position.set(0, 0, 5);
 var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(.2, 32, 32), new THREE.MeshStandardMaterial({envMap: cubemap, roughness: 0.9, metalness: 1.0, envMapIntensity: 3}));
-ball.position.set(0, -.8, 0);
+ball.position.set(.3, -.8, 0);
 balls.add(ball);
+var ball2 = ball.clone();
+ball2.position.set(-.5, -.8, .3);
+balls.add(ball2);
+var ball3 = ball.clone();
+ball3.position.set(-.3, -.8, -.4);
+balls.add(ball3);
 scene.add(balls);
 
 function render() {
