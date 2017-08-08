@@ -105,6 +105,12 @@ ball3.position.set(-.3, -.8, -.4);
 balls.add(ball3);
 scene.add(balls);
 
+var raycaster = new THREE.Raycaster();
+raycaster.near = 0;
+raycaster.far = 200;
+var m = new THREE.MeshBasicMaterial({color: 0xFF0000});
+var intersects;
+
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
@@ -114,6 +120,12 @@ function render() {
 		shards[i].rotation.set(x * Math.sin(shards[i].y), x * Math.cos(shards[i].z), x * Math.sin(shards[i].x));
 	}
 	balls.rotation.y = x * 10;
+	raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
+	intersects = raycaster.intersectObjects(balls.children);
+	if(intersects.length > 0)
+		balls.scale.set(1.1, 1.1, 1.1);
+	else
+		balls.scale.set(1, 1, 1);
 	effect.render(scene, camera);
 }
 render();
