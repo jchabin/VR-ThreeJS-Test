@@ -30,6 +30,18 @@ var effect = new THREE.StereoEffect(renderer);
 effect.eyeSeparation = 50;
 effect.setSize(window.innerWidth, window.innerHeight);
 
+THREE.ImageUtils.crossOrigin = "";
+var cubemap = new THREE.CubeTextureLoader()
+	.load([
+		"../cubemap/IMG_5203.PNG",
+		"../cubemap/IMG_5202.PNG",
+		"../cubemap/IMG_5204.PNG",
+		"../cubemap/IMG_5200.PNG",
+		"../cubemap/IMG_5201.PNG",
+		"../cubemap/IMG_5199.PNG"
+	]);
+cubemap.format = THREE.RGBFormat;
+
 var ground = new THREE.Mesh(
 	new THREE.IcosahedronBufferGeometry(10, 2),
 	new THREE.MeshStandardMaterial({metalness: 0, roughness: 1, shading: THREE.FlatShading}));
@@ -73,6 +85,19 @@ light.position.set(0, 5, 0);
 scene.add(light);
 
 var x = 0;
+
+var balls = new THREE.Object3D();
+var b = new THREE.Mesh(new THREE.BoxBufferGeometry(2, 2, 2, 3, 3, 3), new THREE.MeshBasicMaterial({color: 0xdddddd, wireframe: true}));
+balls.add(b);
+var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), new THREE.MeshBasicMaterial({color: 0xdddddd}));
+plane.position.set(0, -1, 0);
+plane.rotation.set(-Math.PI / 2, 0, 0);
+balls.add(plane);
+balls.position.set(0, 0, 5);
+var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(.2, 32, 32), new THREE.MeshStandardMaterial({envMap: cubemap, roughness: 0.9, metalness: 1.0, envMapIntensity: 3}));
+ball.position.set(0, -.8, 0);
+balls.add(ball);
+scene.add(balls);
 
 function render() {
 	requestAnimationFrame(render);
