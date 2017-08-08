@@ -33,12 +33,12 @@ effect.setSize(window.innerWidth, window.innerHeight);
 THREE.ImageUtils.crossOrigin = "";
 var cubemap = new THREE.CubeTextureLoader()
 	.load([
-		"../cubemap/IMG_5203.PNG",
-		"../cubemap/IMG_5202.PNG",
-		"../cubemap/IMG_5204.PNG",
-		"../cubemap/IMG_5200.PNG",
-		"../cubemap/IMG_5201.PNG",
-		"../cubemap/IMG_5199.PNG"
+		"cubemap/IMG_5203.PNG",
+		"cubemap/IMG_5202.PNG",
+		"cubemap/IMG_5204.PNG",
+		"cubemap/IMG_5200.PNG",
+		"cubemap/IMG_5201.PNG",
+		"cubemap/IMG_5199.PNG"
 	]);
 cubemap.format = THREE.RGBFormat;
 
