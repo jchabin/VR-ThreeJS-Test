@@ -26,7 +26,7 @@ scene.background = cubemap;
 var cubeCamera = new THREE.CubeCamera(1, 100, 128);
 scene.add(cubeCamera);
 
-const BOXES = 10;
+const BOXES = 5;
 var boxes = [];
 for (var i = 0; i < BOXES; i++) {
 	var cc = new THREE.CubeCamera(0.1, 100, 256);
