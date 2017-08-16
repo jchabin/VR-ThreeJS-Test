@@ -93,7 +93,7 @@ var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), new THREE.MeshBa
 plane.position.set(0, -1, 0);
 plane.rotation.set(-Math.PI / 2, 0, 0);
 balls.add(plane);
-balls.position.set(0, 0, 5);
+balls.position.set(5, 0, 0);
 var ball = new THREE.Mesh(new THREE.SphereBufferGeometry(.2, 32, 32), new THREE.MeshStandardMaterial({envMap: cubemap, roughness: 0.9, metalness: 1.0, envMapIntensity: 3}));
 ball.position.set(.3, -.8, 0);
 balls.add(ball);
