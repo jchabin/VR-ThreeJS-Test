@@ -32,7 +32,7 @@ for (var i = 0; i < BOXES; i++) {
 	var cc = new THREE.CubeCamera(0.1, 100, 256);
 	scene.add(cc);
 	var b = new THREE.Mesh(
-		new THREE.SphereBufferGeometry(1, 32, 32),
+		new THREE.SphereBufferGeometry(2, 32, 32),
 		new THREE.MeshBasicMaterial({
 			envMap: cc.renderTarget
 		})
