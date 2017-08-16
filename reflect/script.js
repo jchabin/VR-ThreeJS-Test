@@ -26,7 +26,7 @@ scene.background = cubemap;
 var cubeCamera = new THREE.CubeCamera(1, 100, 128);
 scene.add(cubeCamera);
 
-const BOXES = 5;
+const BOXES = 7;
 var boxes = [];
 for (var i = 0; i < BOXES; i++) {
 	var cc = new THREE.CubeCamera(0.1, 100, 256);
@@ -78,7 +78,7 @@ function render() {
 	}
 	/* 	box.position.set(Math.sin(x), 0, 0);
 	updateReflection(); */
-	x += 0.01;
+	x += 0.03;
 	controls.update();
 	effect.render(scene, camera);
 }
