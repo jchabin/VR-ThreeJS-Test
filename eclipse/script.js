@@ -13,7 +13,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(window.innerWidth, window.innerHeight);
 var element = renderer.domElement;
 document.body.appendChild(element);
-element.style.filter = "blur(1px) contrast(200%)";
+element.style.filter = "blur(1px)";
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
 if(mobile)
 	controls = new THREE.DeviceOrientationControls(camera);
