@@ -34,17 +34,17 @@ scene.add(sprite);
 sprite.position.set(0, 0, -25);
 
 var moon = new THREE.Mesh(
-	new THREE.CylinderBufferGeometry(2.5, 3, 32, 32),
+	new THREE.SphereBufferGeometry(5, 32, 32),
 	new THREE.MeshBasicMaterial({color: color})
 );
 moon.rotation.set(Math.PI / 2, 0, 0);
-moon.position.set(0, 0, -25);
+moon.position.set(0, 0, -20);
 scene.add(moon);
 
 var x = Math.PI / 2;
 function render() {
 	requestAnimationFrame(render);
-	moon.position.set(-(Math.abs((x + Math.PI / 2) % (Math.PI * 2) - Math.PI) - Math.PI / 2) * 8, 0, -25);
+	moon.position.set(-(Math.abs((x + Math.PI / 2) % (Math.PI * 2) - Math.PI) - Math.PI / 2) * 8, 0, -20);
 	x += 0.0005;
 	color.setRGB(0x96 / 0xff * Math.abs(Math.sin(x)), 0xbc / 0xff * Math.abs(Math.sin(x)), 0xf9 / 0xff * Math.abs(Math.sin(x)));
 	moon.material.color.set(color);
