@@ -59,7 +59,7 @@ function render() {
 	x += 0.0005;
 	color.setRGB(0x96 / 0xff * Math.abs(Math.sin(x)), 0xbc / 0xff * Math.abs(Math.sin(x)), 0xf9 / 0xff * Math.abs(Math.sin(x)));
 	moon.material.color.set(color);
-	ring.material.opacity.set(1 - Math.abs(Math.sin(x)));
+	ring.material.opacity = 1 - Math.abs(Math.sin(x));
 	controls.update()
 	effect.render(scene, camera);
 }
