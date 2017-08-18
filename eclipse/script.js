@@ -34,6 +34,16 @@ sprite.scale.set(20, 20, 20);
 scene.add(sprite);
 sprite.position.set(0, 0, -25);
 
+var loader2 = new THREE.TextureLoader().load("ring.png");
+var ring = new THREE.Sprite(new THREE.SpriteMaterial({
+	map: loader2,
+	color: 0xffffff,
+	opacity: 0
+}));
+ring.scale.set(20, 20, 20);
+scene.add(ring);
+ring.position.set(0, 0, -25);
+
 var moon = new THREE.Mesh(
 	new THREE.SphereBufferGeometry(5, 32, 32),
 	new THREE.MeshBasicMaterial({color: color})
@@ -49,6 +59,7 @@ function render() {
 	x += 0.0005;
 	color.setRGB(0x96 / 0xff * Math.abs(Math.sin(x)), 0xbc / 0xff * Math.abs(Math.sin(x)), 0xf9 / 0xff * Math.abs(Math.sin(x)));
 	moon.material.color.set(color);
+	ring.material.opacity.set(1 - Math.abs(Math.sin(x)));
 	controls.update()
 	effect.render(scene, camera);
 }
