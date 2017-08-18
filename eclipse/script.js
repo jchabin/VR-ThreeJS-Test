@@ -45,7 +45,7 @@ var x = Math.PI / 2;
 function render() {
 	requestAnimationFrame(render);
 	moon.position.set(-(Math.abs((x + Math.PI / 2) % (Math.PI * 2) - Math.PI) - Math.PI / 2) * 8, 0, -25);
-	x += 0.0025;
+	x += 0.0005;
 	color.setRGB(0x96 / 0xff * Math.abs(Math.sin(x)), 0xbc / 0xff * Math.abs(Math.sin(x)), 0xf9 / 0xff * Math.abs(Math.sin(x)));
 	moon.material.color.set(color);
 	effect.render(scene, camera);
