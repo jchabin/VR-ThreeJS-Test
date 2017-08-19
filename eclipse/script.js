@@ -40,7 +40,7 @@ var ring = new THREE.Sprite(new THREE.SpriteMaterial({
 	color: 0xffffff,
 	opacity: 0
 }));
-ring.scale.set(40, 40, 40);
+ring.scale.set(25, 25, 25);
 scene.add(ring);
 ring.position.set(0, 0, -25);
 
