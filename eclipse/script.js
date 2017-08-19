@@ -44,16 +44,6 @@ ring.scale.set(16, 16, 16);
 scene.add(ring);
 ring.position.set(0, 0, -25);
 
-var loader3 = new THREE.TextureLoader().load("bigglow.png");
-var glow = new THREE.Sprite(new THREE.SpriteMaterial({
-	map: loader3,
-	color: 0xffffff,
-	opacity: 0
-}));
-glow.scale.set(30, 30, 30);
-scene.add(glow);
-glow.position.set(0, 0, -25);
-
 var moon = new THREE.Mesh(
 	new THREE.SphereBufferGeometry(5, 32, 32),
 	new THREE.MeshBasicMaterial({color: color})
@@ -71,10 +61,6 @@ function render() {
 	moon.material.color.set(color);
 	ring.material.opacity = 1 - Math.abs(Math.sin(x));
 	sprite.material.opacity = Math.abs(Math.sin(x));
-	if(x % Math.PI < 0.1 || x % Math.PI > Math.PI - 0.1)
-		glow.material.opacity = x % Math.PI > 0 ? 0.5 - (Math.PI - (x % Math.PI)) / 0.2 : 0.5 - (x % Math.PI) / 0.2;
-	else
-		glow.material.opacity = 0;
 	controls.update();
 	effect.render(scene, camera);
 }
