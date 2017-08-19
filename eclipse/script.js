@@ -34,13 +34,13 @@ sprite.scale.set(20, 20, 20);
 scene.add(sprite);
 sprite.position.set(0, 0, -25);
 
-var loader2 = new THREE.TextureLoader().load("dring.png");
+var loader2 = new THREE.TextureLoader().load("ringy.png");
 var ring = new THREE.Sprite(new THREE.SpriteMaterial({
 	map: loader2,
 	color: 0xffffff,
 	opacity: 0
 }));
-ring.scale.set(15, 15, 15);
+ring.scale.set(25, 25, 25);
 scene.add(ring);
 ring.position.set(0, 0, -25);
 
