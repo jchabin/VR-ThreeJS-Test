@@ -52,7 +52,7 @@ var glow = new THREE.Sprite(new THREE.SpriteMaterial({
 	color: 0xffffff,
 	opacity: 0
 }));
-glow.scale.set(16, 16, 16);
+glow.scale.set(30, 30, 30);
 scene.add(glow);
 glow.position.set(0, 0, -25);
 
@@ -74,7 +74,7 @@ function render() {
 	ring.material.opacity = 1 - Math.abs(Math.sin(x));
 	sprite.material.opacity = Math.abs(Math.sin(x));
 	if(x % Math.PI < 0.05 || x % Math.PI > Math.PI - 0.05)
-		glow.material.opacity = x % Math.PI > 0 ? 1 - x / 0.05 : 1 - (Math.PI - x) / 0.05;
+		glow.material.opacity = x % Math.PI > 0 ? 0.5 - x / 0.025 : 0.5 - (Math.PI - x) / 0.025;
 	controls.update();
 	effect.render(scene, camera);
 }
