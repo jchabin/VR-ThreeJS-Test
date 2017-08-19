@@ -62,6 +62,7 @@ function render() {
 	ring.material.opacity = 1 - Math.abs(Math.sin(x));
 	sprite.material.opacity = Math.abs(Math.sin(x));
 	controls.update();
+	camera.rotation.y += Math.PI;
 	effect.render(scene, camera);
 }
 render();
