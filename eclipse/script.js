@@ -44,7 +44,7 @@ ring.scale.set(16, 16, 16);
 scene.add(ring);
 ring.position.set(0, 0, -25);
 
-var loader3 = new THREE.TextureLoader().load("ringy.png");
+var loader3 = new THREE.TextureLoader().load("bigglow.png");
 var glow = new THREE.Sprite(new THREE.SpriteMaterial({
 	map: loader3,
 	color: 0xffffff,
