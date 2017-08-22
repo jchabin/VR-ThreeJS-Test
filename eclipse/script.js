@@ -45,7 +45,7 @@ scene.add(ring);
 ring.position.set(0, 0, -100);
 
 var moon = new THREE.Mesh(
-	new THREE.SphereBufferGeometry(5.25, 32, 32),
+	new THREE.SphereBufferGeometry(6, 32, 32),
 	new THREE.MeshBasicMaterial({color: color})
 );
 moon.rotation.set(Math.PI / 2, 0, 0);
