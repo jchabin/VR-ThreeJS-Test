@@ -27,7 +27,7 @@ else{
 }
 
 var effect = new THREE.StereoEffect(renderer);
-effect.eyeSeparation = 50;
+effect.eyeSeparation = 1;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 THREE.ImageUtils.crossOrigin = "";
