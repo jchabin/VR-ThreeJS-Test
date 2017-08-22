@@ -13,7 +13,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(window.innerWidth, window.innerHeight);
 var element = renderer.domElement;
 document.body.appendChild(element);
-element.style.filter = "blur(3px)";
+element.style.filter = "blur(2px)";
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
 if(mobile)
 	controls = new THREE.DeviceOrientationControls(camera);
@@ -45,7 +45,7 @@ scene.add(ring);
 ring.position.set(0, 0, -100);
 
 var moon = new THREE.Mesh(
-	new THREE.SphereBufferGeometry(5, 32, 32),
+	new THREE.SphereBufferGeometry(5.25, 32, 32),
 	new THREE.MeshBasicMaterial({color: color})
 );
 moon.rotation.set(Math.PI / 2, 0, 0);
