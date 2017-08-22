@@ -32,7 +32,7 @@ var sprite = new THREE.Sprite(new THREE.SpriteMaterial({
 }));
 sprite.scale.set(20, 20, 20);
 scene.add(sprite);
-sprite.position.set(0, 0, -25);
+sprite.position.set(0, 0, -100);
 
 var loader2 = new THREE.TextureLoader().load("ringy.png");
 var ring = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -42,20 +42,20 @@ var ring = new THREE.Sprite(new THREE.SpriteMaterial({
 }));
 ring.scale.set(16, 16, 16);
 scene.add(ring);
-ring.position.set(0, 0, -25);
+ring.position.set(0, 0, -100);
 
 var moon = new THREE.Mesh(
 	new THREE.SphereBufferGeometry(5, 32, 32),
 	new THREE.MeshBasicMaterial({color: color})
 );
 moon.rotation.set(Math.PI / 2, 0, 0);
-moon.position.set(0, 0, -20);
+moon.position.set(0, 0, -95);
 scene.add(moon);
 
 var x = Math.PI / 2;
 function render() {
 	requestAnimationFrame(render);
-	moon.position.set(-(Math.abs((x + Math.PI / 2) % (Math.PI * 2) - Math.PI) - Math.PI / 2) * 8, 0, -20);
+	moon.position.set(-(Math.abs((x + Math.PI / 2) % (Math.PI * 2) - Math.PI) - Math.PI / 2) * 8, 0, -95);
 	x += 0.0005;
 	color.setRGB(0x96 / 0xff * Math.abs(Math.sin(x)), 0xbc / 0xff * Math.abs(Math.sin(x)), 0xf9 / 0xff * Math.abs(Math.sin(x)));
 	moon.material.color.set(color);
@@ -63,7 +63,7 @@ function render() {
 	sprite.material.opacity = Math.abs(Math.sin(x));
 	controls.update();
 	if(mobile)
-		camera.rotation.y += Math.PI / 2;
+		camera.rotation.y -= Math.PI / 2;
 	effect.render(scene, camera);
 }
 render();
