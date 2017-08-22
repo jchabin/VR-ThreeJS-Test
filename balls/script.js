@@ -43,7 +43,7 @@ camera.position.set(0, 0, 10);
 }
 
 var effect = new THREE.StereoEffect(renderer);
-effect.eyeSeparation = 10;
+effect.eyeSeparation = 2;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(10, 10), new THREE.MeshBasicMaterial({color: 0xdddddd}));
