@@ -48,4 +48,5 @@ function render() {
 		camera.rotation.y -= Math.PI / 2;
 	effect.render(scene, camera);
 }
+
 render();
