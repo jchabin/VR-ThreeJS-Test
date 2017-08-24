@@ -27,7 +27,7 @@ effect.eyeSeparation = .5;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 var plane = new THREE.Mesh(
-	new THREE.PlaneBufferGeometry(20, 20, 300, 300),
+	new THREE.PlaneBufferGeometry(200, 200, 300, 300),
 	new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0x289dff})
 );
 plane.position.set(0, -5, 0);
@@ -41,7 +41,7 @@ function render() {
 	controls.update();
 	var arr = plane.geometry.attributes.position;
 	for(var i = 2; i < arr.count * 3; i += 3)
-		arr.array[i] = 0.3 * Math.sin(Math.random() / 100 + 4 * x + 10 * i / arr.count);
+		arr.array[i] = 2 * Math.sin(Math.random() / 100 + 4 * x + 10 * i / arr.count);
 	arr.needsUpdate = true;
 	x += 0.01;
 	if(mobile)
