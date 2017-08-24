@@ -28,7 +28,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 
 const WAVE = 301;
 var plane = new THREE.Mesh(
-	new THREE.PlaneBufferGeometry(20, 20, WAVE - 1, WAVE - 1),
+	new THREE.PlaneBufferGeometry(200, 200, WAVE - 1, WAVE - 1),
 	new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0x289dff})
 );
 plane.position.set(0, -5, 0);
