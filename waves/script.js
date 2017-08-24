@@ -46,6 +46,7 @@ function render() {
 	x += 0.01;
 	if(mobile)
 		camera.rotation.y -= Math.PI / 2;
+plane.material.color = 0xff0000 * 0.5 + Math.sin(x) / 2 + 0x00ff00 * 0.5 + Math.sin(x) / 2;
 	effect.render(scene, camera);
 }
 
