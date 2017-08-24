@@ -8,7 +8,7 @@ var camera = new THREE.PerspectiveCamera(
 var renderer = new THREE.WebGLRenderer();
 var color = new THREE.Color(0x9ed3ff);
 scene.background = color;
-scene.fog = new THREE.Fog(0x9ed3ff, 80, 100);
+scene.fog = new THREE.Fog(0x9ed3ff, 0, 100);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -41,7 +41,7 @@ function render() {
 	controls.update();
 	var arr = plane.geometry.attributes.position;
 	for(var i = 2; i < arr.count * 3; i += 3)
-		arr.array[i] = 3 * Math.sin(Math.cos(i) + 10 * x + 10 * i / arr.count);
+		arr.array[i] = 4.5 * Math.sin(Math.cos(i) + 10 * x + 10 * i / arr.count);
 	arr.needsUpdate = true;
 	x += 0.01;
 	if(mobile)
