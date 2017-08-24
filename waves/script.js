@@ -26,8 +26,9 @@ var effect = new THREE.StereoEffect(renderer);
 effect.eyeSeparation = .5;
 effect.setSize(window.innerWidth, window.innerHeight);
 
+const WAVE = 301;
 var plane = new THREE.Mesh(
-	new THREE.PlaneBufferGeometry(200, 200, 300, 300),
+	new THREE.PlaneBufferGeometry(200, 200, WAVE - 1, WAVE - 1),
 	new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0x289dff})
 );
 plane.position.set(0, -5, 0);
@@ -37,13 +38,27 @@ var light = new THREE.PointLight();
 light.position.set(-50, 0, 0);
 scene.add(light);
 
+var waves = [];
+for(var i = 0; i < WAVE; i++){
+	waves.push([]);
+	for(var n = 0; n < WAVE; n++)
+		wave[i].push(Math.random() * Math.PI);
+}
+
+const SMOOTH = 3;
+for(var c = 0; c < SMOOTH; c++)
+	for(var i = 0; i < WAVE; i++)
+		for(var n = 0; n < WAVE; n++){
+			waves[i][n] = (waves[i][n] + waves[i + 1][n + 1] + waves[i + 1][n - 1] + waves[i - 1][n - 1] + waves[i - 1][n + 1]) / 5;
+		}
+
 var x = 0;
 function render() {
 	requestAnimationFrame(render);
 	controls.update();
 	var arr = plane.geometry.attributes.position;
 	for(var i = 2; i < arr.count * 3; i += 3)
-		arr.array[i] = 2 * Math.sin(Math.random() / 100 + 4 * x + 10 * i / arr.count);
+		arr.array[i] = (2 * Math.sin(arr[Math.floor(i / 301)][i % 301] + x));
 	arr.needsUpdate = true;
 	x += 0.01;
 	if(mobile)
