@@ -28,7 +28,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 
 const WAVE = 301;
 var plane = new THREE.Mesh(
-	new THREE.PlaneBufferGeometry(200, 200, WAVE - 1, WAVE - 1),
+	new THREE.PlaneBufferGeometry(20, 20, WAVE - 1, WAVE - 1),
 	new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0x289dff})
 );
 plane.position.set(0, -5, 0);
@@ -58,7 +58,7 @@ function render() {
 	controls.update();
 	var arr = plane.geometry.attributes.position;
 	for(var i = 2; i < arr.count * 3; i += 3)
-		arr.array[i] = (2 * Math.sin(waves[Math.floor((i - 2) / 3 / 301)][(i - 2) / 3 % 301] + x));
+		arr.array[i] = 2 * Math.sin(waves[Math.floor((i - 2) / 3 / 301)][(i - 2) / 3 % 301] + x);
 	arr.needsUpdate = true;
 	x += 0.01;
 	if(mobile)
