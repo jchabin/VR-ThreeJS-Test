@@ -33,7 +33,9 @@ var plane = new THREE.Mesh(
 plane.position.set(0, -5, 0);
 plane.rotation.set(-Math.PI / 2, 0, 0);
 scene.add(plane);
-scene.add(new THREE.PointLight());
+var light = new THREE.PointLight();
+light.position.set(-50, 0, 0);
+scene.add(light);
 
 var x = 0;
 function render() {
