@@ -41,7 +41,7 @@ function render() {
 	controls.update();
 	var arr = plane.geometry.attributes.position;
 	for(var i = 2; i < arr.count * 3; i += 3)
-		arr.array[i] = 4.5 * Math.sin(Math.cos(i) + 10 * x + 10 * i / arr.count);
+		arr.array[i] = 4.5 * Math.sin(Math.cos(i) + 5 * x + 10 * i / arr.count);
 	arr.needsUpdate = true;
 	x += 0.01;
 	if(mobile)
