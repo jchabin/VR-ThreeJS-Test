@@ -47,8 +47,8 @@ for(var i = 0; i < WAVE; i++){
 
 const SMOOTH = 3;
 for(var c = 0; c < SMOOTH; c++)
-	for(var i = 0; i < WAVE; i++)
-		for(var n = 0; n < WAVE; n++){
+	for(var i = 1; i < WAVE - 1; i++)
+		for(var n = 1; n < WAVE - 1; n++){
 			waves[i][n] = (waves[i][n] + waves[i + 1][n + 1] + waves[i + 1][n - 1] + waves[i - 1][n - 1] + waves[i - 1][n + 1]) / 5;
 		}
 
