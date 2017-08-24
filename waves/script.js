@@ -41,12 +41,12 @@ function render() {
 	controls.update();
 	var arr = plane.geometry.attributes.position;
 	for(var i = 2; i < arr.count * 3; i += 3)
-		arr.array[i] = 10 * Math.sin(Math.cos(i) * 10 + 20 * x + 10 * i / arr.count);
+		arr.array[i] = 3 * Math.sin(Math.cos(i / 10) / 2 + 4 * x + 10 * i / arr.count);
 	arr.needsUpdate = true;
 	x += 0.01;
 	if(mobile)
 		camera.rotation.y -= Math.PI / 2;
-plane.material.color = new THREE.Color(0xff0000 * (0.5 + Math.sin(x) / 2) + 0x00ff00 * (0.5 + Math.sin(x * Math.PI / 2) / 2));
+//plane.material.color = new THREE.Color(0xff0000 * (0.5 + Math.sin(x) / 2) + 0x00ff00 * (0.5 + Math.sin(x * Math.PI / 2) / 2));
 	effect.render(scene, camera);
 }
 
