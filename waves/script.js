@@ -27,7 +27,7 @@ effect.eyeSeparation = .5;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 var plane = new THREE.Mesh(
-	new THREE.PlaneBufferGeometry(200, 200, 300, 300),
+	new THREE.PlaneBufferGeometry(20, 20, 300, 300),
 	new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0x289dff})
 );
 plane.position.set(0, -5, 0);
