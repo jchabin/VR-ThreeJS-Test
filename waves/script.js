@@ -45,7 +45,7 @@ for(var i = 0; i < WAVE; i++){
 		waves[i].push(Math.random() * Math.PI * 8);
 }
 
-const SMOOTH = 5;
+const SMOOTH = 100;
 for(var c = 0; c < SMOOTH; c++){
 var wa = [];
 	for(var i = 1; i < WAVE - 1; i++){
