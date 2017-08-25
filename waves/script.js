@@ -45,7 +45,7 @@ for(var i = 0; i < WAVE; i++){
 		waves[i].push(Math.random() * Math.PI * 8);
 }
 
-const SMOOTH = 10;
+const SMOOTH = 20;
 for(var c = 0; c < SMOOTH; c++){
 var wa = [];
 	for(var i = 1; i < WAVE - 1; i++){
@@ -68,7 +68,7 @@ function render() {
 		arr.array[i] = 2 * Math.sin(waves[Math.floor((i - 2) / 3 / 301)][(i - 2) / 3 % 301] + x);
 	arr.needsUpdate = true;
 	plane.geometry.computeVertexNormals();
-	x += 0.05;
+	x += 0.01;
 	if(mobile)
 		camera.rotation.y -= Math.PI / 2;
 //plane.material.color = new THREE.Color(0xff0000 * (0.5 + Math.sin(x) / 2) + 0x00ff00 * (0.5 + Math.sin(x * Math.PI / 2) / 2));
