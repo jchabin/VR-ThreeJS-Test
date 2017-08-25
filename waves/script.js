@@ -29,7 +29,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 const WAVE = 301;
 var plane = new THREE.Mesh(
 	new THREE.PlaneBufferGeometry(200, 200, WAVE - 1, WAVE - 1),
-	new THREE.MeshStandardMaterial({shading: THREE.SmoothShading, color: 0x289dff, metalness: 0.25, roughness: 0.1})
+	new THREE.MeshStandardMaterial({shading: THREE.SmoothShading, color: 0x289dff, metalness: 0.25, roughness: 0.5})
 );
 plane.position.set(0, -5, 0);
 plane.rotation.set(-Math.PI / 2, 0, 0);
