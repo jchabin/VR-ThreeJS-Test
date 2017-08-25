@@ -29,7 +29,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 const WAVE = 301;
 var plane = new THREE.Mesh(
 	new THREE.PlaneBufferGeometry(200, 200, WAVE - 1, WAVE - 1),
-	new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0x289dff})
+	new THREE.MeshPhongMaterial({shading: THREE.SmoothShading, color: 0x289dff})
 );
 plane.position.set(0, -5, 0);
 plane.rotation.set(-Math.PI / 2, 0, 0);
@@ -67,6 +67,7 @@ function render() {
 	for(var i = 2; i < arr.count * 3; i += 3)
 		arr.array[i] = 2 * Math.sin(waves[Math.floor((i - 2) / 3 / 301)][(i - 2) / 3 % 301] + x);
 	arr.needsUpdate = true;
+	plane.geometry.computeVertexNormals();
 	x += 0.05;
 	if(mobile)
 		camera.rotation.y -= Math.PI / 2;
