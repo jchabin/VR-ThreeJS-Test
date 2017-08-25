@@ -45,12 +45,17 @@ for(var i = 0; i < WAVE; i++){
 		waves[i].push(Math.random() * Math.PI * 2);
 }
 
-const SMOOTH = 2;
-for(var c = 0; c < SMOOTH; c++)
-	for(var i = 1; i < WAVE - 1; i++)
+const SMOOTH = 10;
+for(var c = 0; c < SMOOTH; c++){
+var wa = [];
+	for(var i = 1; i < WAVE - 1; i++){
+wa.push([]);
 		for(var n = 1; n < WAVE - 1; n++){
-			waves[i][n] = (waves[i][n] + waves[i + 1][n + 1] + waves[i + 1][n - 1] + waves[i - 1][n - 1] + waves[i - 1][n + 1]) / 5;
+wa[i].push((waves[i][n] + waves[i + 1][n + 1] + waves[i + 1][n - 1] + waves[i - 1][n - 1] + waves[i - 1][n + 1]) / 5);
 		}
+}
+waves = wa;
+}
 
 var x = 0;
 function render() {
