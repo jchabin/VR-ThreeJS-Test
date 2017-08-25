@@ -51,7 +51,7 @@ var wa = [];
 	for(var i = 1; i < WAVE - 1; i++){
 wa.push([]);
 		for(var n = 1; n < WAVE - 1; n++){
-wa[i - 1].push((waves[i][n] + waves[i + 1][n + 1] + waves[i + 1][n - 1] + waves[i - 1][n - 1] + waves[i - 1][n + 1]) / 5);
+wa[i - 1].push((waves[i][n] + waves[i + 1][n + 1] + waves[i + 1][n - 1] + waves[i - 1][n - 1] + waves[i - 1][n + 1] + waves[i][n + 1] + waves[i][n - 1] + waves[i + 1][n] + waves[i - 1][n]) / 9);
 		}
 }
 for(var i = 1; i < WAVE - 1; i++)
