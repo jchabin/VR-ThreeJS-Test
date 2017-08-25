@@ -34,8 +34,8 @@ var plane = new THREE.Mesh(
 plane.position.set(0, -5, 0);
 plane.rotation.set(-Math.PI / 2, 0, 0);
 scene.add(plane);
-var light = new THREE.PointLight();
-light.position.set(-50, 0, 0);
+var light = new THREE.DirectionalLight();
+light.position.set(-25, 25, 25);
 scene.add(light);
 
 var waves = [];
