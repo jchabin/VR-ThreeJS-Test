@@ -42,7 +42,7 @@ var waves = [];
 for(var i = 0; i < WAVE; i++){
 	waves.push([]);
 	for(var n = 0; n < WAVE; n++)
-		waves[i].push(Math.random() * Math.PI * 2);
+		waves[i].push(Math.random() * Math.PI * 4);
 }
 
 const SMOOTH = 10;
