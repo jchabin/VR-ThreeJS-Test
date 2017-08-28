@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" user-scalable="no">
+		<script src="../ThreeJS/three.min.js"></script>
+		<script src="../ThreeJS/FirstPersonControls.js"></script>
+		<script src="../ThreeJS/OrbitControls.js"></script>
+		<script src="../ThreeJS/DeviceOrientationControls.js"></script>
+		<script src="../ThreeJS/StereoEffect.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+			*{
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#bloom{
+				display: none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div style="position: absolute; height: 100vh; width: 2px; top: 0; left: 50vw; transform: translateX(-1px); background-color: white" id="bar"></div>
+		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+			<filter id="bloom">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+				<feComposite in="blur" in2="SourceGraphic" operator="arithmetic" k2="1" k3="1" />
+			</filter>
+		</svg>
+		<script src="script.js"></script>
+	</body>
+</html>
