@@ -57,12 +57,12 @@ var b = new THREE.Mesh(
 );
 for(var i = -2; i < 3; i++){
 	var b2 = b.clone();
-	b2.position.set(i, -6, -11);
+	b2.position.set(i, -6, 11);
 	scene.add(b2);
 }
 
-camera.rotation.set(0, Math.PI, 0);
-camera.position.set(0, 0, -20);
+camera.rotation.set(0, 0, 0);
+camera.position.set(0, 0, 20);
 function render() {
 	requestAnimationFrame(render);
 	if(mobile){
