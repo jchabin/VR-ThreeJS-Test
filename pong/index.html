@@ -8,11 +8,13 @@
 		<script src="../ThreeJS/DeviceOrientationControls.js"></script>
 		<script src="../ThreeJS/StereoEffect.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
 		<style>
 			body{
 				margin: 0;
 				padding: 0;
 				overflow: hidden;
+				background-color: black;
 			}
 			*{
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -20,17 +22,29 @@
 			#bloom{
 				display: none;
 			}
+			.header{
+				font-family: "Encode Sans";
+				color: white;
+				font-size: 5vw;
+				text-align: center;
+			}
+			.button{
+				cursor: pointer;
+				background-color: #111;
+			}
 		</style>
 	</head>
 	
 	<body>
-		<div style="position: absolute; height: 100vh; width: 2px; top: 0; left: 50vw; transform: translateX(-1px); background-color: white" id="bar"></div>
+		<div style="position: absolute; height: 100vh; width: 2px; top: 0; left: 50vw; transform: translateX(-1px); background-color: white; display: none" id="bar"></div>
 		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 			<filter id="bloom">
-				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-				<feComposite in="blur" in2="SourceGraphic" operator="arithmetic" k2="1" k3="1" />
+				<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+				<feComposite in="blur" in2="SourceGraphic" operator="arithmetic" k2="3" k3="1" />
 			</filter>
 		</svg>
+		<div class="header">Do you have a Google Cardboard?</div>
+		<div class="button" onclick="start(true)">Yes</div><div class="button" onclick="start(false)">No</div>
 		<script src="script.js"></script>
 	</body>
 </html>
