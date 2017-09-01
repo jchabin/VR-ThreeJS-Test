@@ -25,9 +25,14 @@ if(mobile){
 	});
 }else{
 	bar.outerHTML = "";
+	database.ref("/text").once("value", function(e){
+		e = e.val();
+		console.log(e);
+		text.value = e;
+	});
 }
 function run(){
-	database.ref("/text").set(text.value.replace("\n", " "));
+	database.ref("/text").set(text.value);
 }
 
 //Shamelessly stolen from https://stackoverflow.com/questions/6637341/use-tab-to-indent-in-textarea
