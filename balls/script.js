@@ -6,6 +6,7 @@ var camera, renderer, scene;
 
 scene = new THREE.Scene();
 renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 var element = renderer.domElement;
