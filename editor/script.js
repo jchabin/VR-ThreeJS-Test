@@ -25,6 +25,8 @@ if(mobile){
 	});
 }else{
 	bar.outerHTML = "";
+	document.getElementById("left").outerHTML = "";
+	document.getElementById("right").outerHTML = "";
 	database.ref("/text").once("value", function(e){
 		e = e.val();
 		console.log(e);
