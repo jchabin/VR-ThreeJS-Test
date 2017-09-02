@@ -2,6 +2,7 @@ var camera, renderer, scene;
 
 scene = new THREE.Scene();
 renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 var element = renderer.domElement;
@@ -27,7 +28,7 @@ else{
 }
 
 var effect = new THREE.StereoEffect(renderer);
-effect.eyeSeparation = 1;
+effect.eyeSeparation = 0.1;
 effect.setSize(window.innerWidth, window.innerHeight);
 
 THREE.ImageUtils.crossOrigin = "";
