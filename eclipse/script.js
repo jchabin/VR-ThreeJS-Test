@@ -10,6 +10,7 @@ var color = new THREE.Color(0x95bcf9);
 scene.background = color;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 var element = renderer.domElement;
 document.body.appendChild(element);
