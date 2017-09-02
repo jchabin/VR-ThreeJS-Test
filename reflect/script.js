@@ -6,6 +6,7 @@ var camera = new THREE.PerspectiveCamera(
 	3000
 );
 var renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 var element = renderer.domElement;
 document.body.appendChild(element);
