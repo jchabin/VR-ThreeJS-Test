@@ -176,13 +176,13 @@ for(var x = 0; x < 2.6; x += 0.2)
 				);
 				b.rotation.set(Math.PI / 4, 0, 0);
 				b.type = 1;
-				var top = new THREE.Mesh(
+				var t = new THREE.Mesh(
 					new THREE.CylinderBufferGeometry(0.03, 0.03, 0.1, 8),
 					new THREE.MeshStandardMaterial({roughness: 0.7, metalness: 0.2, color: 0x000000, shading: THREE.FlatShading})
 				);
-				b.add(top);
-				top.rotation.set(0, 0, Math.PI / 2);
-				top.position.set(0, 0.1, 0);
+				b.add(t);
+				t.rotation.set(0, 0, Math.PI / 2);
+				t.position.set(0, 0.1, 0);
 				var bot= new THREE.Mesh(
 					new THREE.CylinderBufferGeometry(0.03, 0.03, 0.07, 8),
 					new THREE.MeshStandardMaterial({roughness: 0.7, metalness: 0.9, color: 0xffffff, shading: THREE.FlatShading})
