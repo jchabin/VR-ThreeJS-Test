@@ -302,3 +302,4 @@ window.ontouchstart = function(){
 window.ontouchend = function(){
 	mouse = false;
 }
+
