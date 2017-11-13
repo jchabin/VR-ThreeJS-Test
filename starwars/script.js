@@ -23,11 +23,11 @@ camera = new THREE.PerspectiveCamera(
 camera.position.set(0, -0.1, 6.7);
 
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
-//if(mobile)
+if(mobile)
 	controls = new THREE.DeviceOrientationControls(camera);
-//else{
-//	controls = new THREE.OrbitControls(camera, element);
-//}
+else{
+	
+}
 
 var l = new THREE.DirectionalLight(0xffffff, 0.03);
 l.position.set(0, 10, 0);
@@ -99,9 +99,11 @@ var speed = 0.5;
 var x = 0;
 function render() {
 	requestAnimationFrame(render);
-	controls.update();
+	if(mobile){
+		controls.update();
+		camera.rotation.y -= Math.PI / 2;
+	}
 	x += 0.01;
-	camera.rotation.y -= Math.PI / 2;
 	effect.render(scene, camera);
 	cam.updateCubeMap(renderer, scene);
 }
