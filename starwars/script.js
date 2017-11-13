@@ -22,11 +22,15 @@ camera = new THREE.PerspectiveCamera(
 // camera = new THREE.OrthographicCamera(-10, 10, -10, 10, 1, 1000);
 camera.position.set(0, -0.1, 6.7);
 
+var effect;
 var mobile = navigator.userAgent.match("Mobile")!=null||navigator.userAgent.match("Linux;")!=null;
-if(mobile)
+if(mobile){
 	controls = new THREE.DeviceOrientationControls(camera);
-else{
-	
+	effect = new THREE.StereoEffect(renderer);
+	effect.setEyeSeparation(0.01);
+	effect.setSize(window.innerWidth, window.innerHeight);
+}else{
+	effect = renderer;
 }
 
 var l = new THREE.DirectionalLight(0xffffff, 0.03);
@@ -61,11 +65,6 @@ loader.load("../chair.obj", function(chair){
 			}
 	});
 });
-
-
-var effect = new THREE.StereoEffect(renderer);
-effect.setEyeSeparation(0.01);
-effect.setSize(window.innerWidth, window.innerHeight);
 
 var starwars = document.createElement("DIV");
 starwars.innerHTML = '<video width="100vw" style="position: absolute; top: 0; left: 0; z-index: 10;" autoplay loop onclick="this.style.zIndex = -1;"><source src="../Star%20Wars_%20The%20Last%20Jedi%20Trailer%20(Official).mp4"></video>';
