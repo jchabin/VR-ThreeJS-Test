@@ -80,7 +80,7 @@ var screen = new THREE.Mesh(
 	new THREE.PlaneBufferGeometry(20, video.clientHeight / video.clientWidth * 20),
 	new THREE.MeshBasicMaterial({color: 0xffffff, map: texture})
 );
-screen.position.et(0, 5, 0);
+screen.position.set(0, 5, 0);
 scene.add(screen);
 
 (new THREE.TextureLoader()).load("../floor.jpg", function(t){
