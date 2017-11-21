@@ -31,6 +31,7 @@ if(mobile){
 	effect.setSize(window.innerWidth, window.innerHeight);
 }else{
 	effect = renderer;
+	document.getElementById("bar").outerHTML = "";
 }
 
 var l = new THREE.DirectionalLight(0xffffff, 0.03);
