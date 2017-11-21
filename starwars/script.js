@@ -77,9 +77,10 @@ texture.minFilter = THREE.LinearFilter;
 texture.magFilter = THREE.LinearFilter;
 texture.format = THREE.RGBFormat;
 var screen = new THREE.Mesh(
-	new THREE.PlaneBufferGeometry(10, video.clientHeight / video.clientWidth * 10),
+	new THREE.PlaneBufferGeometry(20, video.clientHeight / video.clientWidth * 20),
 	new THREE.MeshBasicMaterial({color: 0xffffff, map: texture})
 );
+screen.position.et(0, 5, 0);
 scene.add(screen);
 
 (new THREE.TextureLoader()).load("../floor.jpg", function(t){
